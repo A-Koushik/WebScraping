@@ -1,1 +1,1 @@
-# WebScraping
+Web Scraping is all about exacting data from a website. The main objective of this project is to create a customizable dataset in csv format. In this project I used flipkart product link(URL) to extract product details such as product name, price, camera spectifications, etc. and extracted data is stored in a csv file.
