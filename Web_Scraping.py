@@ -24,12 +24,11 @@ for i in html.find_all("li",class_="rgWa7D") :
 
 
 with open("DS_CSV.csv", "w", newline='',encoding='utf-8') as file:
-    file_attr = ["Product_Names", "Product_Price","Processor","Camera"]                      # Declaration of Attributes in csv file
-    file_writer = csv.DictWriter(file, fieldnames=file_attr)            # Creating a dictionary to store key and values where keys are attributes and values are values lol
-    file_writer.writeheader()                                           # This will write the Attributes
-    for product,price,processor,cam in zip(html.find_all("div", class_="_4rR01T"),html.find_all("div", class_="_30jeq3 _1_WHN1"),processors,camera):              # find_all is used to find the all attributes conents
-        file_writer.writerow({"Product_Names": product.text,"Product_Price": price.text,"Processor" : processor,"Camera" : cam})           # write row will write the values in product.text into csv file
-
+    file_attr = ["Product_Names", "Product_Price","Processor","Camera"]                      
+    file_writer = csv.DictWriter(file, fieldnames=file_attr)            
+    file_writer.writeheader()                                           
+    for product,price,processor,cam in zip(html.find_all("div", class_="_4rR01T"),html.find_all("div", class_="_30jeq3 _1_WHN1"),processors,camera):              
+        file_writer.writerow({"Product_Names": product.text,"Product_Price": price.text,"Processor" : processor,"Camera" : cam})           
 
 
 df = pd.read_csv("C:/Users/koush/Documents/Python_Projects/DS_CSV.csv")
